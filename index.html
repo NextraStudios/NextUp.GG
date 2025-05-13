@@ -3,124 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ventura Queue Manager</title>
+  <title>NextUp.GG</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-  <style>
-    body, html {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0e0e10;
-      color: #e0e0e0;
-      height: 100%;
-      display: flex; flex-direction: column;
-    }
-
-    header {
-      background: #9146ff;
-      color: white;
-      text-align: center;
-      padding: 12px 16px;
-      position: relative;
-    }
-    header .title {
-      font-weight: 700;
-    }
-    header .subtitle {
-      font-size: 13px;
-      margin-top: 4px;
-    }
-    header .icons {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-    }
-    header .icons i {
-      margin-left: 12px;
-      cursor: pointer;
-      opacity: 0.9;
-    }
-
-    .tab {
-      padding: 6px 16px;
-      text-align: center;
-      margin-top: 10px;
-      font-weight: 500;
-      color: #fff;
-    }
-
-    #queue {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: monospace;
-      font-size: 15px;
-      padding: 16px;
-    }
-
-    #queueList {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      text-align: center;
-    }
-
-    #queueList li {
-      margin: 4px 0;
-    }
-
-    #actions {
-      display: flex;
-      justify-content: space-around;
-      padding: 12px;
-      background: #121214;
-      border-top: 1px solid #1e1e1f;
-    }
-
-    .action-btn {
-      background: #1e1e20;
-      border: 1px solid #2c2c2e;
-      color: #9146ff;
-      padding: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s, opacity 0.2s;
-      font-size: 18px;
-    }
-
-    .action-btn.lock.locked {
-      color: #f04747;
-    }
-
-    .action-btn.lock {
-      color: #3ba55d;
-    }
-
-    .action-btn:hover {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
-    #simulateJoin {
-      position: absolute;
-      top: 12px;
-      left: 16px;
-      font-size: 12px;
-      background: #2f2f32;
-      color: #fff;
-      border: none;
-      padding: 4px 8px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
   <header>
-    <button id="simulateJoin">Simulate !join</button>
-    <div class="title">Play with <strong>vhosttechno</strong></div>
+    <div class="title"><strong>NextUp.GG</strong></div>
     <div class="subtitle">Type <code>!join</code> in the chat</div>
     <div class="icons">
       <i class="fas fa-info-circle" title="Info"></i>
@@ -144,53 +33,7 @@
     <i class="fas fa-arrow-right action-btn" title="Next Player" id="nextBtn"></i>
   </div>
 
-  <script>
-    const players = [];
-    let queueLocked = false;
+  <script src="./scripts/queuebtns.js"></script>
 
-    const queueList = document.getElementById("queueList");
-    const emptyMessage = document.getElementById("emptyMessage");
-
-    function updateQueueDisplay() {
-      queueList.innerHTML = '';
-      if (players.length === 0) {
-        emptyMessage.style.display = 'block';
-      } else {
-        emptyMessage.style.display = 'none';
-        players.forEach((player, index) => {
-          const li = document.createElement("li");
-          li.textContent = `${index + 1}. ${player}`;
-          queueList.appendChild(li);
-        });
-      }
-    }
-
-    document.getElementById("simulateJoin").onclick = () => {
-      if (queueLocked) return;
-      const name = `Player${Math.floor(Math.random() * 1000)}`;
-      players.push(name);
-      updateQueueDisplay();
-    };
-
-    document.getElementById("lockBtn").onclick = () => {
-      queueLocked = !queueLocked;
-      const lockBtn = document.getElementById("lockBtn");
-      lockBtn.classList.toggle("locked");
-    };
-
-    document.getElementById("clearBtn").onclick = () => {
-      players.length = 0;
-      updateQueueDisplay();
-    };
-
-    document.getElementById("nextBtn").onclick = () => {
-      if (players.length > 0) {
-        players.shift();
-        updateQueueDisplay();
-      }
-    };
-
-    updateQueueDisplay();
-  </script>
 </body>
 </html>
