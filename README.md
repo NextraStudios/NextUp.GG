@@ -1,4 +1,4 @@
-#NextUp.GG
+### NextUp.GG
 
 A powerful and user-friendly queue management system designed specifically for Twitch streamers. Easily manage viewer participation during streams with simple chat commands and a sleek Windows companion app.
 
