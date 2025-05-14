@@ -1,96 +1,131 @@
-body, html {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0e0e10;
-      color: #e0e0e0;
-      height: 100%;
-      display: flex; flex-direction: column;
-    }
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0e0e10;
+    color: #e0e0e0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-    header {
-      background: #9146ff;
-      color: white;
-      text-align: center;
-      padding: 12px 16px;
-      position: relative;
-    }
-    header .title {
-      font-weight: 700;
-    }
-    header .subtitle {
-      font-size: 13px;
-      margin-top: 4px;
-    }
-    header .icons {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-    }
-    header .icons i {
-      margin-left: 12px;
-      cursor: pointer;
-      opacity: 0.9;
-    }
+header {
+    background: #9146ff;
+    color: white;
+    text-align: center;
+    padding: 12px 16px;
+    position: relative;
+}
 
-    .tab {
-      padding: 6px 16px;
-      text-align: center;
-      margin-top: 10px;
-      font-weight: 500;
-      color: #fff;
-    }
+header .title {
+    font-weight: 700;
+}
 
-    #queue {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: monospace;
-      font-size: 15px;
-      padding: 16px;
-    }
+header .subtitle {
+    font-size: 13px;
+    margin-top: 4px;
+}
 
-    #queueList {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      text-align: center;
-    }
+header .icons {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
 
-    #queueList li {
-      margin: 4px 0;
-    }
+header .icons i {
+    margin-left: 12px;
+    cursor: pointer;
+    opacity: 0.9;
+}
 
-    #actions {
-      display: flex;
-      justify-content: space-around;
-      padding: 12px;
-      background: #121214;
-      border-top: 1px solid #1e1e1f;
-    }
+.tab {
+    padding: 6px 16px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #fff;
+}
 
-    .action-btn {
-      background: #1e1e20;
-      border: 1px solid #2c2c2e;
-      color: #9146ff;
-      padding: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s, opacity 0.2s;
-      font-size: 18px;
-    }
+#queue {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-size: 15px;
+    padding: 16px;
+}
 
-    .action-btn.lock.locked {
-      color: #f04747;
-    }
+#queueList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
 
-    .action-btn.lock {
-      color: #3ba55d;
-    }
+#queueList li {
+    margin: 4px 0;
+}
 
-    .action-btn:hover {
-      opacity: 1;
-      transform: scale(1.05);
+#actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    background: #121214;
+    border-top: 1px solid #1e1e1f;
+}
+
+.action-btn {
+    background: #1e1e20;
+    border: 1px solid #2c2c2e;
+    color: #9146ff;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    font-size: 18px;
+}
+
+.action-btn.lock.locked {
+    color: #f04747;
+}
+
+.action-btn.lock {
+    color: #3ba55d;
+}
+
+.action-btn:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
     }
+}
+
+.icons a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.icons a:hover {
+    color: inherit;
+}
+
+.icons a:hover .fa-cog {
+    animation: spin 1s linear infinite;
+}
+
+.power-btn {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.power-btn:hover {
+    color: red;
+}
