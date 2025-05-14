@@ -3,14 +3,28 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "test": "npx electron ."
+    "dev": "npx electron .",
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "electron": "^36.2.0",
     "tmi.js": "^1.8.5"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.6.0",
+    "electron": "^36.2.0"
+  },
+  "build": {
+    "appId": "com.nextup.gg.app",
+    "productName": "NextUp.GG",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "assets/NextUp.GG.ico"
+    }
   }
 }
