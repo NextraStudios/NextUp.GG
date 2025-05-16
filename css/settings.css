@@ -1,158 +1,206 @@
-      body {
-        margin: 0;
-        padding: 20px;
-        font-family: "Segoe UI", sans-serif;
-        background: #0e0e10;
-        color: #ffffff;
-      }
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background: #0e0e10;
+  color: #ffffff;
+  padding-top: 56px; /* to avoid content hidden behind fixed header */
+}
 
-      .container {
-        max-width: 400px;
-        margin: auto;
-        background: #1f1f23;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-      }
+.container {
+  max-width: 400px;
+  margin: auto;
+  background: #1f1f23;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
 
-      .container h2 {
-        margin-top: 0;
-        font-size: 18px;
-        border-bottom: 1px solid #333;
-        padding-bottom: 10px;
-      }
+.container h2 {
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
 
-      .info-bar {
-        background: #1a1a1d;
-        color: #00b2ff;
-        padding: 10px;
-        border-radius: 6px;
-        font-size: 14px;
-        margin-bottom: 15px;
-      }
+.info-bar {
+  background: #1a1a1d;
+  color: #00b2ff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
 
-      .setting-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #121214;
-        padding: 10px 14px;
-        margin-bottom: 10px;
-        border-radius: 6px;
-      }
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121214;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
 
-      .setting-row span {
-        font-size: 15px;
-      }
+.setting-row span {
+  font-size: 15px;
+}
 
-      .toggle-switch {
-        position: relative;
-        width: 40px;
-        height: 22px;
-      }
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+}
 
-      .toggle-switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #555;
-        transition: 0.4s;
-        border-radius: 22px;
-      }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+  transition: 0.4s;
+  border-radius: 22px;
+}
 
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        left: 3px;
-        bottom: 3px;
-        background-color: white;
-        transition: 0.4s;
-        border-radius: 50%;
-      }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
 
-      input:checked + .slider {
-        background-color: #3ba55d;
-      }
+input:checked + .slider {
+  background-color: #3ba55d;
+}
 
-      input:checked + .slider:before {
-        transform: translateX(18px);
-      }
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
 
-      /* Styling for the back button */
-      .back-button {
-        font-size: 20px;
-        color: #00b2ff;
-        text-decoration: none;
-        display: inline-block;
-        margin-bottom: 20px;
-      }
+/* Styling for the back button */
+.back-button {
+  -webkit-app-region: no-drag;
+  outline: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #00b2ff;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+}
 
-      .back-button:hover {
-        color: #ffffff;
-      }
+a.back-button:hover,
+a.back-button:focus {
+  color: #ffffff;
+  background-color: #00b2ff;
+  outline: none;
+}
 
-      /* Command Customization Section */
-      .command-section h3 {
-        font-size: 16px;
-        margin-top: 20px;
-        margin-bottom: 15px;
-      }
+a.back-button:focus {
+  outline: none;
+  box-shadow: none;
+}
 
-      .command-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-      }
+/* Command Customization Section */
+.command-section h3 {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
 
-      .command-row label {
-        font-size: 14px;
-      }
+.command-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-      .command-input {
-        padding: 5px;
-        font-size: 14px;
-        width: 50%;
-        background: #121214;
-        border: 1px solid #555;
-        border-radius: 5px;
-        color: #ffffff;
-      }
+.command-row label {
+  font-size: 14px;
+}
 
-      /* Command Box */
-      .command-box {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-      }
+.command-input {
+  padding: 5px;
+  font-size: 14px;
+  width: 50%;
+  background: #121214;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #ffffff;
+}
 
-      .command-item {
-        background: #3b3b3f;
-        padding: 5px 10px;
-        border-radius: 5px;
-        color: white;
-        display: flex;
-        align-items: center;
-      }
+/* Command Box */
+.command-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
 
-      .command-item span {
-        margin-right: 8px;
-      }
+.command-item {
+  background: #3b3b3f;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
 
-      .remove-command {
-        cursor: pointer;
-        color: #ff4d4d;
-        font-size: 16px;
-      }
+.command-item span {
+  margin-right: 8px;
+}
+
+.remove-command {
+  cursor: pointer;
+  color: #ff4d4d;
+  font-size: 16px;
+}
+
+/* Header styling */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+
+  -webkit-app-region: drag;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  color: #00b2ff;
+  padding: 0 20px;
+  height: 56px;
+  background: #121214;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  flex-shrink: 0;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none; /* So clicks don’t block back button */
+  user-select: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #00b2ff;
+  -webkit-app-region: no-drag;
+}

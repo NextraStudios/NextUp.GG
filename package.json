@@ -11,11 +11,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "tmi.js": "^1.8.5"
+    "tmi.js": "^1.8.5",
+    "ws": "^8.18.2"
   },
   "devDependencies": {
-    "electron-builder": "^24.6.0",
-    "electron": "^36.2.0"
+    "electron": "^36.2.0",
+    "electron-builder": "^24.6.0"
   },
   "build": {
     "appId": "com.nextup.gg.app",

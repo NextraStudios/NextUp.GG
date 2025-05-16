@@ -12,13 +12,19 @@
     <div class="title"><strong>NextUp.GG</strong></div>
     <div class="subtitle">Type <code>!join</code> in the chat</div>
     <div class="icons">
-      <i class="fas fa-info-circle" title="Info"></i>
+      <a href="./pages/notifications.html" title="Notifications">
+  <i class="fas fa-bell"></i>
+</a>
+
       <a href="./pages/settings.html">
         <i class="fas fa-cog" title="Settings"></i>
       </a>
     <i class="fas fa-power-off power-btn" title="Exit App" id="exitBtn"></i>
+     <script src="./scripts/powerbtn.js"></script>
     </div>
   </header>
+
+
 
   <div class="tab">Queue</div>
 
@@ -34,7 +40,8 @@
   </div>
 
   <script src="./scripts/queuebtns.js"></script>
-  <script src="./scripts/powerbtn.js"></script>
+  <script src="./core/receiver.js"></script>
+ 
 
 </body>
 </html>

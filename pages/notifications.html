@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NextUp.GG - Notifications</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../css/notifications.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+       <a href="../index.html" class="back-button">
+      <i class="fas fa-arrow-left"></i> Back to Queue
+    </a>
+      <div>Notifications</div>
+      <div style="width: 90px"></div>
+      <!-- spacer -->
+    </header>
+
+    <div id="notificationsPanel">
+      <h2>Recent Notifications</h2>
+      <div id="notificationsList">
+        <div class="info-bar">No notifications yet.</div>
+      </div>
+    </div>
+
+    <script>
+      function addNotification(text) {
+        const list = document.getElementById("notificationsList");
+        const infoBar = list.querySelector(".info-bar");
+        if (infoBar) infoBar.remove();
+
+        const div = document.createElement("div");
+        div.classList.add("notification");
+        div.textContent = text;
+        list.prepend(div);
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        addNotification("Connected to Twitch");
+      });
+    </script>
+  </body>
+</html>
